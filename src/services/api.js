@@ -3,7 +3,13 @@ import axios from 'axios';
 // Calculate normalized base API URL, strictly stripping any unintended query params (e.g. ?utm_source=...)
 const getApiBaseUrl = () => {
   const envUrl = import.meta.env.VITE_API_URL;
-  if (!envUrl) return '/api';
+  if (!envUrl) {
+    // In production, fallback directly to the verified Render production backend
+    if (import.meta.env.PROD) {
+      return 'https://cup2eatback.onrender.com/api';
+    }
+    return '/api';
+  }
 
   try {
     if (envUrl.startsWith('http://') || envUrl.startsWith('https://')) {
