@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Lock, Mail, ArrowRight, AlertCircle, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { BRAND } from '../../theme/brand';
 
 const LoginPage = () => {
-  const { login, verifyOtp } = useAuth();
+  const { user, login, verifyOtp } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      if (user.role === 'admin') navigate('/admin');
+      else navigate('/dashboard');
+    }
+  }, [user, navigate]);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

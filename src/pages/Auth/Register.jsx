@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { User, Mail, Phone, Lock, ArrowRight, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
@@ -6,8 +6,15 @@ import { BRAND } from '../../theme/brand';
 import api from '../../services/api';
 
 const RegisterPage = () => {
-  const { register, verifyOtp } = useAuth();
+  const { user, register, verifyOtp } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      if (user.role === 'admin') navigate('/admin');
+      else navigate('/dashboard');
+    }
+  }, [user, navigate]);
 
   const [step, setStep] = useState(1); // 1: form, 2: OTP verification
   const [formData, setFormData] = useState({

@@ -1,7 +1,16 @@
 import axios from 'axios';
 
+// Calculate normalized base API URL
+const getApiBaseUrl = () => {
+  const envUrl = import.meta.env.VITE_API_URL;
+  if (!envUrl) return '/api';
+  const clean = envUrl.trim().replace(/\/$/, '');
+  return clean.endsWith('/api') ? clean : `${clean}/api`;
+};
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: getApiBaseUrl(),
+  timeout: 30000, // 30s timeout to accommodate cold starts on serverless / Render free tier
   headers: {
     'Content-Type': 'application/json',
   },
@@ -19,7 +28,7 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Interceptor to handle unauthenticated 401 response
+// Interceptor to handle unauthenticated 401 response and connection errors
 api.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -28,7 +37,6 @@ api.interceptors.response.use(
       if (localStorage.getItem('c2e_token')) {
         localStorage.removeItem('c2e_token');
         localStorage.removeItem('c2e_user');
-        // Do not force redirect if on a public route, let auth context handle state
       }
     }
     return Promise.reject(error);
