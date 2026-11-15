@@ -121,7 +121,7 @@ const LoginPage = () => {
         )}
 
         {!unverifiedState ? (
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form method="POST" action="#" onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="text-xs font-bold text-[#1B382B] block mb-1.5 uppercase tracking-wider">
                 Email Address
@@ -172,7 +172,7 @@ const LoginPage = () => {
           </form>
         ) : (
           /* Inline OTP Verification Flow */
-          <form onSubmit={handleVerifyOtp} className="space-y-4">
+          <form method="POST" action="#" onSubmit={handleVerifyOtp} className="space-y-4">
             <div className="p-4 rounded-xl bg-[#F6F3ED] border border-[#DFD1BD] text-xs text-[#4A3B2A] leading-relaxed">
               <ShieldCheck className="w-5 h-5 text-[#8A6728] mb-1 inline mr-1" />
               For your security, unverified accounts cannot sign in without entering the email OTP code.

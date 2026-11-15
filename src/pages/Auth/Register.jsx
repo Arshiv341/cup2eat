@@ -148,7 +148,7 @@ const RegisterPage = () => {
         )}
 
         {step === 1 ? (
-          <form onSubmit={handleRegisterSubmit} className="space-y-4">
+          <form method="POST" action="#" onSubmit={handleRegisterSubmit} className="space-y-4">
             <div>
               <label className="text-xs font-bold text-[#1B382B] block mb-1 uppercase tracking-wider">
                 Full Name *
@@ -249,7 +249,7 @@ const RegisterPage = () => {
             </button>
           </form>
         ) : (
-          <form onSubmit={handleOtpSubmit} className="space-y-4">
+          <form method="POST" action="#" onSubmit={handleOtpSubmit} className="space-y-4">
             <div>
               <label className="text-xs font-bold text-[#1B382B] block mb-1 text-center uppercase tracking-wider">
                 Enter 6-Digit Email Code

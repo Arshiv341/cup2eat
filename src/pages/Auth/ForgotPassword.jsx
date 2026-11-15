@@ -109,7 +109,7 @@ const ForgotPasswordPage = () => {
         )}
 
         {step === 1 ? (
-          <form onSubmit={handleRequestOtp} className="space-y-4">
+          <form method="POST" action="#" onSubmit={handleRequestOtp} className="space-y-4">
             <div>
               <label className="text-xs font-bold text-slate-700 block mb-1">
                 Account Email Address
@@ -137,7 +137,7 @@ const ForgotPasswordPage = () => {
             </button>
           </form>
         ) : (
-          <form onSubmit={handleResetPassword} className="space-y-4">
+          <form method="POST" action="#" onSubmit={handleResetPassword} className="space-y-4">
             <div>
               <label className="text-xs font-bold text-slate-700 block mb-1">
                 6-Digit Email Code
