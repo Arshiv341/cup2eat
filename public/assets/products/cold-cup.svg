@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <defs>
+    <linearGradient id="cupCold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#8F6A3D"/>
+      <stop offset="35%" stopColor="#B38957"/>
+      <stop offset="70%" stopColor="#A07847"/>
+      <stop offset="100%" stopColor="#7A562B"/>
+    </linearGradient>
+    <linearGradient id="innerCold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#5E3F1C"/>
+      <stop offset="100%" stopColor="#8F6433"/>
+    </linearGradient>
+    <pattern id="waffleGridCold" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="22" height="22" fill="none"/>
+      <path d="M 0 0 L 22 0 M 0 0 L 0 22" stroke="#664621" stroke-width="1.8" opacity="0.6"/>
+    </pattern>
+  </defs>
+
+  <rect width="500" height="500" rx="24" fill="#F4EFEA"/>
+  
+  <ellipse cx="250" cy="435" rx="135" ry="24" fill="#E2D8CD"/>
+  <ellipse cx="250" cy="435" rx="100" ry="16" fill="#CBBDB0"/>
+
+  <!-- Taller 150 ML Cold Cup Body -->
+  <path d="M 135 130 L 175 405 C 180 422 205 430 250 430 C 295 430 320 422 325 405 L 365 130 Z" fill="url(#cupCold)"/>
+  <path d="M 135 130 L 175 405 C 180 422 205 430 250 430 C 295 430 320 422 325 405 L 365 130 Z" fill="url(#waffleGridCold)"/>
+
+  <!-- Rim -->
+  <ellipse cx="250" cy="130" rx="115" ry="28" fill="url(#innerCold)" stroke="#A07847" stroke-width="3"/>
+  
+  <!-- Chilled Cold Coffee / Thick Shake surface with froth -->
+  <ellipse cx="250" cy="134" rx="105" ry="22" fill="#422918"/>
+  <ellipse cx="250" cy="140" rx="92" ry="16" fill="#E0CEBD" opacity="0.9"/>
+  <circle cx="230" cy="138" r="6" fill="#FFF" opacity="0.6"/>
+  <circle cx="265" cy="142" r="4" fill="#FFF" opacity="0.5"/>
+
+  <!-- Flavour Badge -->
+  <rect x="35" y="35" width="200" height="34" rx="17" fill="#1B382B"/>
+  <text x="135" y="57" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12" fill="#D4AF37" text-anchor="middle" letter-spacing="1">COLD COFFEE 150ML</text>
+  <text x="250" y="475" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13" fill="#6B5138" text-anchor="middle" letter-spacing="0.5">Heavy Gauge Edible Biscuit Shake Cup</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <defs>
+    <linearGradient id="cupVan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#C49A5F"/>
+      <stop offset="35%" stopColor="#E2B77B"/>
+      <stop offset="70%" stopColor="#D5A566"/>
+      <stop offset="100%" stopColor="#A88049"/>
+    </linearGradient>
+    <linearGradient id="innerVan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#875E2D"/>
+      <stop offset="100%" stopColor="#B5864A"/>
+    </linearGradient>
+    <pattern id="waffleGridVan" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="20" height="20" fill="none"/>
+      <path d="M 0 0 L 20 0 M 0 0 L 0 20" stroke="#997039" stroke-width="1.8" opacity="0.6"/>
+    </pattern>
+  </defs>
+
+  <rect width="500" height="500" rx="24" fill="#F7F3EC"/>
+  
+  <ellipse cx="250" cy="425" rx="130" ry="24" fill="#E6DED4"/>
+  <ellipse cx="250" cy="425" rx="95" ry="16" fill="#D3C7B9"/>
+
+  <!-- Tapered Edible Cup Body -->
+  <path d="M 140 160 L 175 390 C 180 410 205 418 250 418 C 295 418 320 410 325 390 L 360 160 Z" fill="url(#cupVan)"/>
+  <path d="M 140 160 L 175 390 C 180 410 205 418 250 418 C 295 418 320 410 325 390 L 360 160 Z" fill="url(#waffleGridVan)"/>
+
+  <!-- Rim -->
+  <ellipse cx="250" cy="160" rx="110" ry="28" fill="url(#innerVan)" stroke="#C49A5F" stroke-width="3"/>
+  <ellipse cx="250" cy="164" rx="100" ry="22" fill="#5E3C18"/>
+
+  <!-- Hot Milk Coffee / Chai Surface -->
+  <ellipse cx="250" cy="170" rx="88" ry="16" fill="#8C5C32" opacity="0.95"/>
+
+  <!-- Steam -->
+  <path d="M 250 132 C 250 132 258 115 250 100 C 242 85 255 70 250 55" stroke="#C49A5F" stroke-width="3.5" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 230 135 C 230 135 238 120 232 108 C 226 95 235 82 230 70" stroke="#C49A5F" stroke-width="2.5" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- Flavour Badge -->
+  <rect x="35" y="35" width="165" height="34" rx="17" fill="#1B382B"/>
+  <text x="117" y="57" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12" fill="#D4AF37" text-anchor="middle" letter-spacing="1">VANILLA 100ML</text>
+  <text x="250" y="470" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13" fill="#876846" text-anchor="middle" letter-spacing="0.5">Golden Vanilla Infused Wafer</text>
+</svg>
